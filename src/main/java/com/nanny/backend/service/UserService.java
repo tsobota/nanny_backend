@@ -22,9 +22,9 @@ public class UserService {
         return userRepository.getUserByPersonalInformationEmail(email);
     }
 
-/*    public User createUser(User user) {
-
-    }*/
+    public User createUser(User user) {
+        return userRepository.save(user);
+    }
 
     public Iterable<User> findAll (){
         return userRepository.findAll();

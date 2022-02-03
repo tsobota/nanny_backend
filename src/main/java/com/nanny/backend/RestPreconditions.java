@@ -10,4 +10,10 @@ public class RestPreconditions {
         }
         return resource;
     }
+    public static <T> T checkNotNull(T resource) throws NotFoundException {
+        if (resource == null) {
+            throw new NotFoundException("");
+        }
+        return resource;
+    }
 }
