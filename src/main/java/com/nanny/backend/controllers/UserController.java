@@ -29,10 +29,10 @@ public class UserController {
         return RestPreconditions.checkFound(userService.getUserByEmail(email));
     }
 
-/*    @PostMapping
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Long create(@RequestBody User newUser) {
-        RestPreconditions.checkNotNull(newUser);
+    public User create(@RequestBody User newUser) throws NotFoundException {
+        RestPreconditions.checkFound(newUser);
         return userService.createUser(newUser);
-    }*/
+    }
 }
