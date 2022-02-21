@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <changeSet id="add-user-role" author="tsobota">
+        <insert tableName="roles">
+            <column name="id" value="1"></column>
+            <column name="name" value="ROLE_USER"></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="add-moderator-role" author="tsobta">
+        <insert tableName="roles">
+            <column name="id" valueComputed="(SELECT MAX(id) + 1 FROM ROLES)"></column>
+            <column name="name" value="ROLE_MODERATOR"></column>
+        </insert>
+    </changeSet>
+
+    <changeSet id="add-admin-role" author="tsobota">
+        <insert tableName="roles">
+            <column name="id" valueComputed="(SELECT MAX(id) + 1 FROM ROLES)"></column>
+            <column name="name" value="ROLE_ADMIN"></column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

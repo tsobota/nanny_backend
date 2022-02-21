@@ -1,4 +1,4 @@
-package com.nanny.backend.Application;
+package com.nanny.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
